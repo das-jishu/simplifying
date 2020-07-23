@@ -1,0 +1,30 @@
+{
+  "name": "simplifying",
+  "version": "1.0.0",
+  "description": "Lightweight library",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --config jestconfig.json",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/das-jishu/simplifying.git"
+  },
+  "keywords": [],
+  "files": [
+    "lib/**/*"
+  ],
+  "author": "Subham Das",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/das-jishu/simplifying/issues"
+  },
+  "homepage": "https://github.com/das-jishu/simplifying#readme",
+  "devDependencies": {
+    "@types/jest": "^26.0.5",
+    "jest": "^26.1.0",
+    "ts-jest": "^26.1.3",
+    "typescript": "^3.9.7"
+  }
+}
