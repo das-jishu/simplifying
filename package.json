@@ -1,6 +1,6 @@
 {
   "name": "simplifying",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "description": "A lightweight library containing multiple utility functions to make your life easier when dealing with arrays and objects",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -12,6 +12,7 @@
     "version" : "git add -A src",
     "postversion" : "git push && git push --tags"
   },
+  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/das-jishu/simplifying.git"
