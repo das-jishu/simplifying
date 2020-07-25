@@ -23,6 +23,12 @@ test('TEST:2 - Picking random from Array', () => {
   expect(randomArr.length).toBe(6);
 });
 
+test('TEST:3 - Picking random from Array', () => {
+  let arr = [2, 7, 9, 0, 1, 5];
+  let randomArr = pickRandom(arr, 6);
+  expect(randomArr.length).toBe(6);
+});
+
 test('TEST - Count item in an Array', () => {
   let arr = [2, 7, 9, 7, 1, 5];
   expect(countItem(arr, 7)).toBe(2);

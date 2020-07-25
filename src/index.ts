@@ -27,9 +27,9 @@ export const removeDuplicates = (array: Array<any>) => {
 };
 
 //Picking random elements
-export const pickRandom = (array: Array<any>, n: Number, unique: Boolean) => {
+export const pickRandom = (array: Array<any>, n: Number, unique?: Boolean) => {
   let arr: Array<any> = shuffle(array);
-  if (unique === true) {
+  if (unique && unique === true) {
     arr = removeDuplicates(arr);
   }
 
