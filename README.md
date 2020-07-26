@@ -33,4 +33,10 @@ removeDuplicates | array: Array | Removes all duplicate elements and returns a n
 pickRandom | array: Array,<br/> n: Number,<br/> unique?: Boolean | Returns an array of n random elements from array.<br/>The returned elements will be unique if true is passed in the third parameter
 countItem | array: Array,<br/> item: any | Returns the frequency of the passed item in the array
 countAll | array: Array | Returns a map which holds the frequencies of all items in the array
+toArray | x: (string, number) | Converts string or number to array of characters or digits
+merge | array1: Array,<br /> array2: Array, <br />, type?: string | Merge two arrays.<br />type == 'merge-all': Keep the duplicates<br/>type == 'common': Returns common elements<br />no type: Merge and remove common
+clean | array: Array | Removes null, undefined, '', NaN
+flatten | array: Array | Flattens all nested arrays inside
+swapByPosition | array: Array,<br />pos1: number,<br />pos2: number | Swaps values in pos1 and pos2 in the array
+swapByValues | array: Array,<br /> value1: any,<br /> value2: any | Swaps value1 and value2 in the array
 
