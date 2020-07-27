@@ -1,6 +1,10 @@
 # Simplifying JS
  
- [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
+ [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT "MIT License")
+ [![npm version](http://img.shields.io/npm/v/simplifying.svg?style=flat)](https://npmjs.org/package/simplifying "View this project on npm")
+ [![npm](https://img.shields.io/npm/dt/simplifying)](https://npmjs.org/package/simplifying "View project on npm")
+ ![GitHub repo size](https://img.shields.io/github/repo-size/das-jishu/simplifying)
+ [![npm bundle size](https://img.shields.io/bundlephobia/min/simplifying)](https://npmjs.org/package/simplifying "View project on npm")
 
 A lightweight library containing multiple utility functions to make your life easier when dealing with arrays and objects.
 
