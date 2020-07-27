@@ -138,3 +138,77 @@ export const swapByValues = (array: Array<any>, value1: any, value2: any): Array
   array = swapByPosition(array, array.indexOf(value1), array.indexOf(value2));
   return array;
 };
+
+//Perform numerical computations on array
+export const perform = (array: Array<number>, operation: string): number => {
+  let result = 0;
+  switch (operation) {
+    case 'sum': 
+      array.forEach(item => result += item);
+      break;
+    case 'product':
+      result =  1;
+      array.forEach(item => result *= item);
+      break;
+    case 'max':
+      array = array.sort();
+      result = array[array.length - 1];
+      break;
+    case 'min':
+      array = array.sort();
+      result = array[0];
+      break;
+    case 'average':
+      array.forEach(item => result += item);
+      result /= array.length;
+      break;
+    default:
+      array = array.sort();
+      result = array[array.length - 1];
+  }
+  return result;
+};
+
+//Convert an array to an object
+export const arrayToObject = (array: Array<any>): Object => {
+  let obj = {}; 
+  obj = Object.assign({}, array); 
+  return obj; 
+};
+
+
+//////// ARRAY OF OBJECTS UTILITIES ////////
+
+//Convert array of objects to an object
+export const arrayOfObjectsToObject = (array: Array<any>, keyField: string): Object =>
+  Object.assign({}, ...array.map(item => ({[item[keyField]]: item})));
+
+//Sort based on a keyfield
+export const sortByKeyField = (array: Array<Object>, keyField: string, order?: string): Array<Object> => {
+  if(array.length === 0)
+  return [];
+
+  return array.sort(function(a, b) {
+    let x = a[keyField as keyof typeof array[0]]; 
+    let y = b[keyField as keyof typeof array[0]];
+    if(order && order === 'desc')
+    return ((x < y) ? 1 : ((x > y) ? -1 : 0));
+    else
+    return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+  });
+};
+
+//Get some particular fields of all the objects in the array
+export const getFields = (array: Array<Object>, fields: Array<any>): Array<Object> => {
+  if(array.length === 0 || fields.length === 0)
+  return array;
+
+  let result = array.map( item => {
+    let obj = {};
+    fields.forEach( field => {
+      Object.assign(obj, { [field]: item[field as keyof typeof item]});
+    });
+    return obj;
+  });
+  return result;
+};

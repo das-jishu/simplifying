@@ -39,4 +39,8 @@ clean | array: Array | Removes null, undefined, '', NaN
 flatten | array: Array | Flattens all nested arrays inside
 swapByPosition | array: Array,<br />pos1: number,<br />pos2: number | Swaps values in pos1 and pos2 in the array
 swapByValues | array: Array,<br /> value1: any,<br /> value2: any | Swaps value1 and value2 in the array
-
+perform | array: Array,<br /> operation: string | Performs the said operation on the array.<br />Allowed Operations:<br />sum, average, min, max, average
+arrayToObject | array: Array | Converts an array to object
+arrayOfObjectsToObject | array: Array,<br /> keyField: string | Converts an array of objects to an object where key is keyField
+sortByKeyField | array: Array,<br /> keyField: string,<br /> order?: string | Sorts an array of objects based on keyField. Default sorting order is ascending. Pass 'desc' to order for reverse.
+getFields | array: Array,<br /> fields: Array | Returns an array of objects containing only the required fields

@@ -1,4 +1,4 @@
-import { clean, flatten, swapByPosition, swapByValues } from './../index';
+import { clean, flatten, swapByPosition, swapByValues, perform, arrayToObject, arrayOfObjectsToObject, sortByKeyField, getFields } from './../index';
 import { shuffle, removeDuplicates, countItem, countAll, pickRandom, toArray, merge } from '../index';
 
 test('TEST - Shuffling Array', () => {
@@ -67,4 +67,106 @@ test('TEST - Swapping by position in an array', () => {
 
 test('TEST - Swapping by values in an array', () => {
   expect(swapByValues([1, 2, 3, 4, 5, 6], 2, 5)).toStrictEqual([1, 5, 3, 4, 2, 6]);
+});
+
+test('TEST - Performing numerical computations on an array', () => {
+  expect(perform([1,2,5,4,3], 'sum')).toBe(15);
+  expect(perform([1,2,5,4,3], 'product')).toBe(120);
+  expect(perform([1,2,5,4,3], 'max')).toBe(5);
+  expect(perform([1,2,5,4,3], 'min')).toBe(1);
+  expect(perform([1,2,5,4,3], 'average')).toBe(3);
+});
+
+test('TEST - Array to Object', () => {
+  expect(arrayToObject([1,2,3,4])).toStrictEqual({0: 1, 1: 2, 2: 3, 3: 4});
+});
+
+test('TEST - Converting array of objects to an object', () => {
+  expect(arrayOfObjectsToObject([
+    { id: 123, name: "dave", age: 23 },
+    { id: 456, name: "chris", age: 23 },
+    { id: 789, name: "bob", age: 23 },
+    { id: 101, name: "tom", age: 23 },
+    { id: 102, name: "tim", age: 23 }
+  ], 'id')).toStrictEqual({
+    "123": { id: 123, name: "dave", age: 23 },
+    "456": { id: 456, name: "chris", age: 23 },
+    "789": { id: 789, name: "bob", age: 23 },
+    "101": { id: 101, name: "tom", age: 23 },
+    "102": { id: 102, name: "tim", age: 23 }
+  });
+});
+
+test('TEST - Sorting an array of objects based on keyfield', () => {
+  expect(sortByKeyField([
+    { id: 123, name: "dave", age: 23 },
+    { id: 456, name: "chris", age: 23 },
+    { id: 789, name: "bob", age: 23 },
+    { id: 101, name: "tom", age: 23 },
+    { id: 102, name: "tim", age: 23 }
+  ], 'id')).toStrictEqual([
+    { id: 101, name: "tom", age: 23 },
+    { id: 102, name: "tim", age: 23 },
+    { id: 123, name: "dave", age: 23 },
+    { id: 456, name: "chris", age: 23 },
+    { id: 789, name: "bob", age: 23 },
+  ]);
+
+  expect(sortByKeyField([
+    { id: 123, name: "dave", age: 23 },
+    { id: 456, name: "chris", age: 23 },
+    { id: 789, name: "bob", age: 23 },
+    { id: 101, name: "tom", age: 23 },
+    { id: 102, name: "tim", age: 23 }
+  ], 'name')).toStrictEqual([
+    { id: 789, name: "bob", age: 23 },
+    { id: 456, name: "chris", age: 23 },
+    { id: 123, name: "dave", age: 23 },
+    { id: 102, name: "tim", age: 23 },
+    { id: 101, name: "tom", age: 23 }    
+  ]);
+
+  expect(sortByKeyField([
+    { id: 123, name: "dave", age: 23 },
+    { id: 456, name: "chris", age: 23 },
+    { id: 789, name: "bob", age: 23 },
+    { id: 101, name: "tom", age: 23 },
+    { id: 102, name: "tim", age: 23 }
+  ], 'name', 'desc')).toStrictEqual([
+    { id: 101, name: "tom", age: 23 },
+    { id: 102, name: "tim", age: 23 },
+    { id: 123, name: "dave", age: 23 },
+    { id: 456, name: "chris", age: 23 },
+    { id: 789, name: "bob", age: 23 },
+  ]);
+});
+
+test('TEST - Get particular fields', () => {
+  expect(getFields([
+    { id: 123, name: "dave", age: 23 },
+    { id: 456, name: "chris", age: 23 },
+    { id: 789, name: "bob", age: 23 },
+    { id: 101, name: "tom", age: 23 },
+    { id: 102, name: "tim", age: 23 }
+  ], ['id', 'name'])).toStrictEqual([
+    { id: 123, name: "dave" },
+    { id: 456, name: "chris", },
+    { id: 789, name: "bob", },
+    { id: 101, name: "tom", },
+    { id: 102, name: "tim", }
+  ]);
+
+  expect(getFields([
+    { id: 123, name: "dave", age: 23 },
+    { id: 456, name: "chris", age: 23 },
+    { id: 789, name: "bob", age: 23 },
+    { id: 101, name: "tom", age: 23 },
+    { id: 102, name: "tim", age: 23 }
+  ], ['id', 'age'])).toStrictEqual([
+    { id: 123, age: 23 },
+    { id: 456, age: 23 },
+    { id: 789, age: 23 },
+    { id: 101, age: 23 },
+    { id: 102, age: 23 }
+  ]);
 });
