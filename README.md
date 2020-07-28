@@ -7,7 +7,10 @@
  [![npm](https://img.shields.io/npm/dt/simplifying)](https://npmjs.org/package/simplifying "View project on npm")
  ![GitHub repo size](https://img.shields.io/github/repo-size/das-jishu/simplifying)
  [![npm bundle size](https://img.shields.io/bundlephobia/min/simplifying)](https://npmjs.org/package/simplifying "View project on npm")
-
+ [![Active](http://img.shields.io/badge/Status-Active-green.svg)](https://github.com/das-jishu/simplifying)
+ [![GitHub tag](https://img.shields.io/github/tag/das-jishu/simplifying.svg)](https://GitHub.com/das-jishu/simplifying/tags/)
+ [![Generic badge](https://img.shields.io/badge/lang-typescript-yellow.svg)](https://www.typescriptlang.org/)
+ 
 A lightweight library containing multiple utility functions to make your life easier when dealing with arrays and objects.
 
 ### HOW TO USE
