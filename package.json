@@ -12,7 +12,7 @@
     "prepublishOnly": "npm test",
     "version": "git add -A src",
     "postversion": "git push && git push --tags",
-    "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls"
+    "coveralls": "jest --coverage && cat ./tests/coverage/lcov.info | coveralls"
   },
   "repository": {
     "type": "git",
