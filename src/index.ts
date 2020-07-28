@@ -67,6 +67,25 @@ export const countAll = (array: Array<any>): Map<any, number> => {
   return result;
 };
 
+//Search for multiple occurances of an item
+export const searchItems = (array: Array<any>, item: any): Array<number> => {
+  let positions: Array<number> = [];
+  if(!array.includes(item)) return [-1];
+
+  array.forEach( (value, index) => {
+    if(value === item)
+    positions.push(index);
+  });
+  return positions;
+};
+
+//Delete multiple occurances of an element
+export const removeItems = (array: Array<any>, item: any): Array<any> => {
+  let result: Array<any> = [];
+  result = array.filter( i => i != item );
+  return result;
+};
+
 //Converts string or numbers into an array of characters or digits 
 export const toArray = (x: (string | number)): Array<any> => {
   let y = x.toString();
@@ -211,4 +230,42 @@ export const getFields = (array: Array<Object>, fields: Array<any>): Array<Objec
     return obj;
   });
   return result;
+};
+
+//Get all values of a particular field in an array
+export const getOneField = (array: Array<Object>, field: string): Array<any> => {
+  let result: Array<any> = [];
+  array.forEach( item => {
+    result.push(item[field as keyof typeof item]);
+  });
+  return result;
+};
+
+//Search by a particular field and get required fields
+export const searchByKeyField = (array: Array<Object>, searchField: string, searchValue: any, reqFields?: Array<any>): Array<Object> => {
+  if(array.length === 0) return array;
+
+  let result: Array<Object> = [];
+  let fields = (reqFields) ? reqFields : Object.keys(array[0]);
+  array.forEach( item => {
+    if(item.hasOwnProperty(searchField) && item[searchField as keyof typeof item] === searchValue)
+    result.push(item);
+  });
+  result = getFields(result, fields);
+  return result;
+};
+
+//Delete multiple instances by key field
+export const deleteByKeyField = (array: Array<Object>, field: string, value: any): Array<Object> => {
+  let result: Array<Object> = [];
+  array.forEach( item => {
+    if(item[field as keyof typeof item] !== value)
+    result.push(item);
+  });
+  return result;
+};
+
+//Get all keys of the objects in the array
+export const getKeys = (array: Array<Object>): Array<string> => {
+  return (!array) ? [] : Object.keys(array[0]);
 };

@@ -1,4 +1,4 @@
-import { clean, flatten, swapByPosition, swapByValues, perform, arrayToObject, arrayOfObjectsToObject, sortByKeyField, getFields } from './../index';
+import { clean, flatten, swapByPosition, swapByValues, perform, arrayToObject, arrayOfObjectsToObject, sortByKeyField, getFields, searchByKeyField, getOneField, deleteByKeyField, removeItems, getKeys, searchItems } from './../index';
 import { shuffle, removeDuplicates, countItem, countAll, pickRandom, toArray, merge } from '../index';
 
 test('TEST - Shuffling Array', () => {
@@ -34,6 +34,15 @@ test('TEST - Count all items in an Array', () => {
   result.set(7, 3);
   result.set(9, 1);
   expect(countAll(arr)).toStrictEqual(result);
+});
+
+test('TEST - Search for multiple occurances of an item', () => {
+  expect(searchItems([2, 3, 4, 3, 2, 3, 5, 6, 7], 3)).toStrictEqual([1, 3, 5]);
+  expect(searchItems([2, 3, 4, 3, 2, 3, 5, 6, 7], 9)).toStrictEqual([-1]);
+});
+
+test('TEST - Remove all occurances of an item', () => {
+  expect(removeItems([2, 3, 4, 4, 3, 5], 3)).toStrictEqual([2, 4, 4, 5]);
 });
 
 test('TEST - Convert a string to an array of characters', () => {
@@ -169,4 +178,56 @@ test('TEST - Get particular fields', () => {
     { id: 101, age: 23 },
     { id: 102, age: 23 }
   ]);
+});
+
+test('TEST - Get one field in an array', () => {
+  expect(getOneField([
+    { id: 123, name: "dave", age: 23 },
+    { id: 456, name: "chris", age: 23 },
+    { id: 789, name: "bob", age: 23 },
+    { id: 101, name: "tom", age: 23 },
+    { id: 102, name: "tim", age: 23 }
+  ], 'name')).toStrictEqual(['dave', 'chris', 'bob', 'tom', 'tim']);
+});
+
+test('TEST - Search by key field in array of objects', () => {
+  expect(searchByKeyField([
+    { id: 123, name: "dave", age: 23 },
+    { id: 456, name: "chris", age: 23 },
+    { id: 789, name: "bob", age: 23 },
+    { id: 101, name: "tom", age: 23 },
+    { id: 102, name: "tim", age: 23 }
+  ], 'id', 123)).toStrictEqual([{ id: 123, name: "dave", age: 23 }]);
+
+  expect(searchByKeyField([
+    { id: 123, name: "dave", age: 23 },
+    { id: 456, name: "chris", age: 23 },
+    { id: 789, name: "bob", age: 23 },
+    { id: 101, name: "tom", age: 23 },
+    { id: 102, name: "tim", age: 23 }
+  ], 'name', 'bob', ['id', 'age'])).toStrictEqual([{ id: 789, age: 23 }]);
+});
+
+test('TEST - Delete multiple instances by keyField', () => {
+  expect(deleteByKeyField([
+    { id: 123, name: "dave", age: 23 },
+    { id: 456, name: "chris", age: 23 },
+    { id: 789, name: "bob", age: 23 },
+    { id: 101, name: "chris", age: 23 },
+    { id: 102, name: "tim", age: 23 }
+  ], 'name', 'chris')).toStrictEqual([
+    { id: 123, name: "dave", age: 23 },
+    { id: 789, name: "bob", age: 23 },
+    { id: 102, name: "tim", age: 23 }
+  ]);
+});
+
+test('TEST - Get keys of objects in the array', ()=> {
+  expect(getKeys([
+    { id: 123, name: "dave", age: 23 },
+    { id: 456, name: "chris", age: 23 },
+    { id: 789, name: "bob", age: 23 },
+    { id: 101, name: "tom", age: 23 },
+    { id: 102, name: "tim", age: 23 }
+  ])).toStrictEqual(['id', 'name', 'age']);
 });
