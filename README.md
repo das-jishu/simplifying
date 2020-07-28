@@ -2,6 +2,8 @@
 
 ![Image of simplifying](https://github.com/das-jishu/simplifying/blob/master/images/simplifying.png?raw=true)
  
+ [![Build Status](https://travis-ci.org/github/das-jishu/simplifying.svg?branch=master)](https://travis-ci.org/github/das-jishu/simplifying)
+ [![Coverage Status](https://coveralls.io/repos/github/das-jishu/simplifying/badge.svg?branch=master)](https://coveralls.io/github/das-jishu/simplifying?branch=master)
  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT "MIT License")
  [![npm version](http://img.shields.io/npm/v/simplifying.svg?style=flat)](https://npmjs.org/package/simplifying "View this project on npm")
  [![npm](https://img.shields.io/npm/dt/simplifying)](https://npmjs.org/package/simplifying "View project on npm")
