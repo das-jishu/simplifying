@@ -6,7 +6,7 @@
   "types": "lib/index.d.ts",
   "scripts": {
     "test": "jest --config jestconfig.json",
-    "push": "git add src/ .gitignore jestconfig.json package.json package-lock.json README.md tsconfig.json",
+    "push": "git add src/ images/ .gitignore jestconfig.json package.json package-lock.json README.md tsconfig.json",
     "build": "tsc",
     "prepare": "npm run build",
     "prepublishOnly": "npm test",
