@@ -1,4 +1,6 @@
 # Simplifying JS
+
+![Image of simplifying](https://github.com/das-jishu/simplifying/blob/master/images/simplifying.png?raw=true)
  
  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT "MIT License")
  [![npm version](http://img.shields.io/npm/v/simplifying.svg?style=flat)](https://npmjs.org/package/simplifying "View this project on npm")
