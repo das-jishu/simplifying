@@ -60,3 +60,5 @@ getOneField | array: Array,<br /> field: string | Returns an array of all the va
 searchByKeyField | array: Array,<br /> searchField: string,<br /> searchValue: string,<br /> reqFields?: Array | Searches the array for the given (key, value) pair and returns only the reqFields. If nothing is passed, the whole object is returned.
 deleteByKeyField | array: Array,<br /> field: string,<br /> value: string | Deletes an item based on the (key, value) pair
 getKeys | array: Array | Returns an array of all the keys inside the object. Assumes that all objects have the same keys
+slide | array: Array,<br /> steps: number,<br /> direction?: string | Shifts array by n steps in the given direction. The default direction is left.
+range | array: Array,<br /> start: number,<br /> end: number | Returns a subarray from start to end - 1
