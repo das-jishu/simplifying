@@ -22,7 +22,7 @@ Install Simplifying:<br/>
 npm i simplifying
 ```
 If you do not have npm installed, you can download it [here](https://www.npmjs.com/get-npm).<br/><br/>
-EXAMPLE CODE:
+##### EXAMPLE CODE:
 
 ```javascript
 const array = require('simplifying');
@@ -31,7 +31,7 @@ console.log(array.removeDuplicates(arr));
 
 //OUTPUT: [2, 3, 4]
 ```
-<br /><br />
+<br />
 
 ### List of all methods on array: <br/>
 
@@ -56,7 +56,7 @@ arrayToObject | array: Array | Converts an array to object
 slide | array: Array,<br /> steps: number,<br /> direction?: string | Shifts array by n steps in the given direction. The default direction is left.
 range | array: Array,<br /> start: number,<br /> end: number | Returns a subarray from start to end - 1
 
-<br /><br />
+<br />
 
 ### List of all methods on array of objects: <br />
 
