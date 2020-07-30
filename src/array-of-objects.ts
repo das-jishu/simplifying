@@ -64,3 +64,9 @@ module.exports.deleteByKeyField = (array: Array<Object>, field: string, value: a
 module.exports.getKeys = (array: Array<Object>): Array<string> => {
     return (!array) ? [] : Object.keys(array[0]);
 };
+
+module.exports.findObjects = (array: Array<Object>, func: (value: any, index: any) => {}): Array<Object> => {
+  let result: Array<Object> = [];
+  result = array.filter(func);
+  return result;
+}

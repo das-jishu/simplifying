@@ -31,9 +31,9 @@ console.log(array.removeDuplicates(arr));
 
 //OUTPUT: [2, 3, 4]
 ```
+<br /><br />
 
-
-### List of all methods available: <br/>
+### List of all methods on array: <br/>
 
 
 Method | Parameters | Use
@@ -53,6 +53,15 @@ swapByPosition | array: Array,<br />pos1: number,<br />pos2: number | Swaps valu
 swapByValues | array: Array,<br /> value1: any,<br /> value2: any | Swaps value1 and value2 in the array
 perform | array: Array,<br /> operation: string | Performs the said operation on the array.<br />Allowed Operations:<br />sum, product, min, max, average
 arrayToObject | array: Array | Converts an array to object
+slide | array: Array,<br /> steps: number,<br /> direction?: string | Shifts array by n steps in the given direction. The default direction is left.
+range | array: Array,<br /> start: number,<br /> end: number | Returns a subarray from start to end - 1
+
+<br /><br />
+
+### List of all methods on array of objects: <br />
+
+Method | Parameters | Use
+------------ | ------------- | --------------
 arrayOfObjectsToObject | array: Array,<br /> keyField: string | Converts an array of objects to an object where key is keyField
 sortByKeyField | array: Array,<br /> keyField: string,<br /> order?: string | Sorts an array of objects based on keyField. Default sorting order is ascending. Pass 'desc' to order for reverse.
 getFields | array: Array,<br /> fields: Array | Returns an array of objects containing only the required fields
@@ -60,5 +69,4 @@ getOneField | array: Array,<br /> field: string | Returns an array of all the va
 searchByKeyField | array: Array,<br /> searchField: string,<br /> searchValue: string,<br /> reqFields?: Array | Searches the array for the given (key, value) pair and returns only the reqFields. If nothing is passed, the whole object is returned.
 deleteByKeyField | array: Array,<br /> field: string,<br /> value: string | Deletes an item based on the (key, value) pair
 getKeys | array: Array | Returns an array of all the keys inside the object. Assumes that all objects have the same keys
-slide | array: Array,<br /> steps: number,<br /> direction?: string | Shifts array by n steps in the given direction. The default direction is left.
-range | array: Array,<br /> start: number,<br /> end: number | Returns a subarray from start to end - 1
+findObjects | array: Array,<br /> func: Function | Executes the function on all objects and returns the satisfied objects

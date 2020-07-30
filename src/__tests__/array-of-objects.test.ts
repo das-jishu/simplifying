@@ -141,3 +141,17 @@ test('TEST - Converting array of objects to an object', () => {
       { id: 102, name: "tim", age: 23 }
     ])).toStrictEqual(['id', 'name', 'age']);
   });
+
+  test('TEST - Finding objects from an array', () => {
+    expect(ao.findObjects([
+      { id: 123, name: "dave", age: 23 },
+      { id: 456, name: "chris", age: 23 },
+      { id: 789, name: "bob", age: 23 },
+      { id: 101, name: "tom", age: 23 },
+      { id: 102, name: "tim", age: 23 }
+    ], (item) => !(item.id < 105) )).toStrictEqual([
+      { id: 123, name: "dave", age: 23 },
+      { id: 456, name: "chris", age: 23 },
+      { id: 789, name: "bob", age: 23 }
+    ]);
+  });
