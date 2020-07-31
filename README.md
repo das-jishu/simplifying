@@ -70,3 +70,17 @@ searchByKeyField | array: Array,<br /> searchField: string,<br /> searchValue: s
 deleteByKeyField | array: Array,<br /> field: string,<br /> value: string | Deletes an item based on the (key, value) pair
 getKeys | array: Array | Returns an array of all the keys inside the object. Assumes that all objects have the same keys
 findObjects | array: Array,<br /> func: Function | Executes the function on all objects and returns the satisfied objects
+
+<br />
+
+### LICENSE
+
+[MIT](https://opensource.org/licenses/MIT)
+<br />
+
+### Author
+
+Subham Das
+
+##### Open an issue if you feel the need for a change or want to report any bugs.
+
