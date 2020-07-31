@@ -1,4 +1,4 @@
-const b = require('./array-of-objects.ts');
+const b = require('./array-of-objects.js');
 
 module.exports.arrayOfObjectsToObject = (array: Array<any>, keyField: string): Object =>
 Object.assign({}, ...array.map(item => ({[item[keyField]]: item})));

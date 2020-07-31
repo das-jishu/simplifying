@@ -5,9 +5,9 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
-    "test": "jest --config jestconfig.json",
-    "push": "git add src/ images/ .gitignore jestconfig.json package.json package-lock.json README.md tsconfig.json .travis.yml LICENSE.md",
-    "build": "tsc",
+    "test": "tsc --project ./tsconfig-2.json && jest --config jestconfig.json",
+    "push": "git add src/ images/ .gitignore jestconfig.json package.json package-lock.json README.md tsconfig-1.json tsconfig-2.json .travis.yml LICENSE.md",
+    "build": "tsc --project ./tsconfig-1.json",
     "prepare": "npm run build",
     "prepublishOnly": "npm test",
     "version": "git add -A src",

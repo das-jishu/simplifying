@@ -1,4 +1,4 @@
-const a = require('./array.ts');
+const a = require('./array.js');
 
 module.exports.range = (array: Array<any>, start: number, end: number): Array<any> => {
     let result: Array<any> = [];

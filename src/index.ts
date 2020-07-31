@@ -1,4 +1,4 @@
-const arrays = require('./array.ts');
-const arrayOfObjects = require('./array-of-objects.ts');
+const arrays = require('./array.js');
+const arrayOfObjects = require('./array-of-objects.js');
 
 module.exports = {...arrays, ...arrayOfObjects};

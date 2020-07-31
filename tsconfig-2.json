@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+      "target": "es5",
+      "module": "commonjs",
+      "outDir": "./src",
+      "strict": false,
+      "noImplicitAny": false,
+      "allowJs": true,
+    },
+    "include": ["src/array.ts", "src/array-of-objects.ts"],
+    "exclude": ["node_modules", "**/__tests__/*"],    
+}
