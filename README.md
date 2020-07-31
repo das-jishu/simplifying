@@ -33,6 +33,10 @@ console.log(array.removeDuplicates(arr));
 ```
 <br />
 
+![Image of example code](https://github.com/das-jishu/simplifying/blob/master/images/example.png?raw=true)
+
+<br />
+
 ### List of all methods on array: <br/>
 
 
