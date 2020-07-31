@@ -33,7 +33,7 @@ console.log(array.removeDuplicates(arr));
 ```
 <br />
 
-![Image of example code](https://github.com/das-jishu/simplifying/blob/master/images/example.png?raw=true)
+![Image of example code](https://github.com/das-jishu/simplifying/blob/master/images/example.PNG?raw=true)
 
 <br />
 
