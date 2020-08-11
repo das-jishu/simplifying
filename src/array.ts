@@ -7,7 +7,8 @@ module.exports.range = (array: Array<any>, start: number, end: number): Array<an
     return result;
 };
 
-module.exports.shuffle = (array: Array<any>): Array<any> => {
+module.exports.shuffle = (arr: Array<any>): Array<any> => {
+    let array = arr;
     let currentIndex = array.length, temp, randomIndex;
   
     while (0 !== currentIndex) {

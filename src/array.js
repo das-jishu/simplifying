@@ -5,7 +5,8 @@ module.exports.range = function (array, start, end) {
         result.push(array[i]);
     return result;
 };
-module.exports.shuffle = function (array) {
+module.exports.shuffle = function (arr) {
+    var array = arr;
     var currentIndex = array.length, temp, randomIndex;
     while (0 !== currentIndex) {
         randomIndex = Math.floor(Math.random() * currentIndex);
