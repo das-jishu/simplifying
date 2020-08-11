@@ -98,3 +98,7 @@ test('TEST - Shifting an array by n steps', () => {
 test('TEST - Returning a subarray', () => {
   expect(array.range([2, 4, 5, 7, 9], 2, 5)).toStrictEqual([5, 7, 9]);
 });
+
+test('TEST - Jumping steps in an array', () => {
+  expect(array.jump([1, 2, 3, 4, 5, 6], 2)).toStrictEqual([1, 3, 5]);
+});

@@ -57,8 +57,9 @@ swapByPosition | array: Array,<br />pos1: number,<br />pos2: number | Swaps valu
 swapByValues | array: Array,<br /> value1: any,<br /> value2: any | Swaps value1 and value2 in the array
 perform | array: Array,<br /> operation: string | Performs the said operation on the array.<br />Allowed Operations:<br />sum, product, min, max, average
 arrayToObject | array: Array | Converts an array to object
-slide | array: Array,<br /> steps: number,<br /> direction?: string | Shifts array by n steps in the given direction. The default direction is left.
+slide | array: Array,<br /> steps: number,<br /> direction?: string | Shifts array by n steps in the given direction. The default direction is left
 range | array: Array,<br /> start: number,<br /> end: number | Returns a subarray from start to end - 1
+jump | array: Array,<br /> steps: number | Returns a subarray jumping the steps mentioned
 
 <br />
 

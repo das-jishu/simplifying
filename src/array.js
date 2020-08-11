@@ -174,3 +174,10 @@ module.exports.slide = function (array, steps, direction) {
     var times = steps > array.length ? steps % array.length : steps;
     return array.concat(array.splice(0, (direction && direction === 'right' ? array.length - times : times)));
 };
+module.exports.jump = function (array, steps) {
+    var arr = [];
+    for (var i = 0; i < array.length; i += steps) {
+        arr.push(array[i]);
+    }
+    return arr;
+};
