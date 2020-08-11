@@ -200,3 +200,9 @@ module.exports.jump = (array: Array<any>, steps: number): Array<any> => {
     }
     return arr;
 };
+
+module.exports.isUnique = (array: Array<any>): boolean => {
+   let arr = a.removeDuplicates(array);
+   if(arr.length === array.length) return true;
+   return false;
+}

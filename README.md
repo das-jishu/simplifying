@@ -60,6 +60,7 @@ arrayToObject | array: Array | Converts an array to object
 slide | array: Array,<br /> steps: number,<br /> direction?: string | Shifts array by n steps in the given direction. The default direction is left
 range | array: Array,<br /> start: number,<br /> end: number | Returns a subarray from start to end - 1
 jump | array: Array,<br /> steps: number | Returns a subarray jumping the steps mentioned
+isUnique | array: Array | Return true if all elements are unique in the array and false otherwise
 
 <br />
 

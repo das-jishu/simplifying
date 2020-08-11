@@ -102,3 +102,8 @@ test('TEST - Returning a subarray', () => {
 test('TEST - Jumping steps in an array', () => {
   expect(array.jump([1, 2, 3, 4, 5, 6], 2)).toStrictEqual([1, 3, 5]);
 });
+
+test('TEST - Check if array contains all unique values', () => {
+  expect(array.isUnique([1, 2, 3, 4, 5])).toBe(true);
+  expect(array.isUnique([1, 2, 3, 3, 4])).toBe(false);
+});

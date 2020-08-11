@@ -181,3 +181,9 @@ module.exports.jump = function (array, steps) {
     }
     return arr;
 };
+module.exports.isUnique = function (array) {
+    var arr = a.removeDuplicates(array);
+    if (arr.length === array.length)
+        return true;
+    return false;
+};
